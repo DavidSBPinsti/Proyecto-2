@@ -71,3 +71,28 @@ classDiagram
     QuestionBank "1" --> "40" Question : banco estático
     Question "1" *-- "3" Answer : opciones
 ```
+
+## Ejecutor de pruebas
+
+```mermaid
+classDiagram
+    class QuizTests {
+        -int checks$
+        -QuizTests()
+        +main(String[] args) void$
+        -check(boolean condition, String description) void$
+        -invoke(QuizEngine engine, String name, Class[] types, Object[] arguments) Object$
+        -testModels() void$
+        -testBank() void$
+        -testValidation() void$
+        -testFeedback() void$
+        -testSession(ByteArrayOutputStream output) void$
+    }
+    QuizTests ..> QuizEngine : valida e integra
+    QuizTests ..> QuestionBank : prueba selección
+    QuizTests ..> Answer : verifica datos
+    QuizTests ..> Question : verifica copias
+    QuizTests ..> GameRecord : verifica resultados
+```
+
+En el código de pruebas, types es Class<?>[] y arguments usa varargs Object..., representado aquí como Object[]. Los métodos de prueba que usan reflexión declaran throws Exception. Los atributos del juego son final. Los miembros estáticos se indican con el sufijo $ en el código Mermaid. Los modelos inmutables exponen getters y se inicializan mediante sus constructores.
