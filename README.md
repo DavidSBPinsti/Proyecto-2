@@ -1,11 +1,11 @@
 # Quiz Java comentado
 
-Juego de consola con dos categorías de veinte preguntas. Necesita JDK 17 o superior. Los seis archivos Java de la raíz contienen el juego y tests/QuizTests.java contiene las pruebas. Las líneas de código incluyen comentarios laterales explicativos.
+Juego de consola con dos categorías de veinte preguntas. Necesita JDK 17 o superior. Todos los archivos Java están dentro de src. Las clases del juego están en src y las pruebas en src/tests. Las líneas de código incluyen comentarios laterales explicativos.
 
 ## Ejecutar desde la carpeta del proyecto
 
 ```powershell
-javac -encoding UTF-8 -d out Answer.java Question.java GameRecord.java QuestionBank.java QuizEngine.java Main.java
+javac -encoding UTF-8 -d out src/*.java
 java -cp out Main
 ```
 
@@ -14,7 +14,7 @@ En IntelliJ abre esta carpeta, selecciona un JDK 17 o superior y ejecuta Main.ma
 ## Ejecutar las pruebas
 
 ```powershell
-javac -encoding UTF-8 -d out Answer.java Question.java GameRecord.java QuestionBank.java QuizEngine.java Main.java tests/QuizTests.java
+javac -encoding UTF-8 -d out src/*.java src/tests/QuizTests.java
 java -cp out QuizTests
 ```
 
@@ -37,13 +37,14 @@ flujo.md contiene el diagrama principal de ejecución. uml.md incluye las seis c
 
 ## Git y publicación pendiente
 
-La carpeta incluye un repositorio Git local. Sus commits registran la versión inicial existente y las correcciones realizadas a partir de la revisión. La autoría técnica de estos commits es Codex, con correo local codex@localhost. Las fechas corresponden a la ejecución real.
+La carpeta incluye el historial Git local de la versión inicial y las correcciones realizadas durante la revisión. La autoría técnica de estos commits es Codex, con correo local codex@localhost. Las fechas corresponden a la ejecución real.
 
-La publicación en GitHub está pendiente de conexión. El requisito de subir avances desde el comienzo del desarrollo no queda demostrado por este historial local. Una vez creado un repositorio vacío en tu cuenta, ejecuta estas órdenes sustituyendo USUARIO y REPOSITORIO:
+El repositorio de entrega es https://github.com/DavidSBPinsti/Proyecto-2. Para subir esta reorganización, desde la carpeta del proyecto ejecuta:
 
 ```powershell
-git remote add origin https://github.com/USUARIO/REPOSITORIO.git
-git push -u origin main
+git add src README.md uml.md
+git commit -m "Mover codigo Java a src"
+git push
 ```
 
-Entrega la URL real de ese repositorio junto con el ZIP, los diagramas y los casos de prueba. El ZIP incluye la carpeta .git para conservar el historial. Para ver los commits ejecuta `git log --oneline`.
+Para abrir el proyecto en IntelliJ, abre la carpeta QuizJava y ejecuta Main desde src. Si IntelliJ no reconoce las clases automáticamente, marca src como Sources Root. Para ver los commits ejecuta `git log --oneline`.

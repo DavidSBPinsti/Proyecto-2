@@ -11,10 +11,10 @@ public final class Main { // Declara esta clase como no heredable.
             QuizEngine engine = new QuizEngine(input, bank); // Obtiene o inicializa el motor del juego.
             System.out.println("=== La búsqueda del tesoro ==="); // Muestra el texto o dato indicado al usuario.
             String username = engine.readUsername(); // Obtiene o inicializa el nombre validado o leído del usuario.
-            do { // Ejecuta al menos una partida antes de comprobar si se repite.
-                engine.playGame(username); // Ejecuta una partida con el nombre del jugador.
-            } while (engine.wantsReplay()); // Repite el ciclo cuando el usuario elige jugar otra vez.
-            engine.showStatistics(); // Muestra todas las partidas guardadas antes de salir.
-        } // Cierra el bloque, método o clase.
-    } // Cierra el bloque, método o clase.
-} // Cierra el bloque, método o clase.
+            do {
+                engine.playGame(username);
+            } while (engine.wantsReplay());
+            engine.showStatistics();
+        }
+    }
+}

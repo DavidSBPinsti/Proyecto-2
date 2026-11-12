@@ -1,0 +1,43 @@
+public final class Preguntas{
+    public static final String pregunta1 = "¿Qué estructura guarda elementos por índice?";
+    public static final String pregunta2 = "¿Qué tipo representa verdadero o falso en Java?";
+    public static final String pregunta3 = "¿Qué palabra crea un objeto en Java?";
+    public static final String pregunta4 = "¿Qué componente ejecuta instrucciones?";
+    public static final String pregunta5 = "¿Qué memoria pierde su contenido al apagar el equipo?";
+    public static final String pregunta6 = "¿Qué extensión suele tener un archivo fuente de Java?";
+    public static final String pregunta7 = "¿Qué protocolo resuelve nombres de dominio?";
+    public static final String pregunta8 = "¿Qué sistema numérico usa dos símbolos?";
+    public static final String pregunta9 = "¿Qué instrucción devuelve un valor desde un método Java?";
+    public static final String pregunta10 = "¿Qué operador comprueba si dos valores int son iguales?";
+    public static final String pregunta11 = "¿Qué método obtiene el tamaño de un ArrayList?";
+    public static final String pregunta12 = "¿Qué palabra inicia un bloque de gestión de excepciones?";
+    public static final String pregunta13 = "¿Qué tipo de Java representa un entero de 32 bits?";
+    public static final String pregunta14 = "¿Qué comando compila código fuente de Java?";
+    public static final String pregunta15 = "¿Qué tecnología permite mantener versiones de código?";
+    public static final String pregunta16 = "¿Qué dispositivo conecta redes distintas?";
+    public static final String pregunta17 = "¿Qué formato suele usarse para estilos web?";
+    public static final String pregunta18 = "¿Qué sistema operativo incluye el explorador de archivos de Microsoft?";
+    public static final String pregunta19 = "¿Cuál es el primer índice de un array en Java?";
+    public static final String pregunta20 = "¿Qué palabra permite heredar de una clase en Java?";
+    public static final String pregunta21 = "¿Cuál es la capital de Portugal?";
+    public static final String pregunta22 = "¿Qué planeta es conocido como el planeta rojo?";
+    public static final String pregunta23 = "¿Cuál es el océano más grande?";
+    public static final String pregunta24 = "¿Cuántos lados tiene un hexágono?";
+    public static final String pregunta25 = "¿Qué instrumento tiene teclas y cuerdas golpeadas por martillos?";
+    public static final String pregunta26 = "¿Quién escribió Don Quijote de la Mancha?";
+    public static final String pregunta27 = "¿Qué órgano bombea la sangre?";
+    public static final String pregunta28 = "¿Qué unidad mide la temperatura en el Sistema Internacional?";
+    public static final String pregunta29 = "¿Qué país tiene forma de bota en el mapa?";
+    public static final String pregunta30 = "¿Cuál es el símbolo químico del oro?";
+    public static final String pregunta31 = "¿Cuántos minutos tiene una hora?";
+    public static final String pregunta32 = "¿Qué animal es un mamífero?";
+    public static final String pregunta33 = "¿En qué continente está Egipto principalmente?";
+    public static final String pregunta34 = "¿Qué gas absorben las plantas durante la fotosíntesis?";
+    public static final String pregunta35 = "¿Cuál es la raíz cuadrada de 81?";
+    public static final String pregunta36 = "¿Qué planeta es el más cercano al Sol?";
+    public static final String pregunta37 = "¿Quién pintó Las meninas?";
+    public static final String pregunta38 = "¿Cuál es el satélite natural de la Tierra?";
+    public static final String pregunta39 = "¿Qué lengua se habla principalmente en Brasil?";
+    public static final String pregunta40 = "¿Cuántas cuerdas tiene un violín estándar?";
+}
+
