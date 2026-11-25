@@ -32,6 +32,49 @@ classDiagram
         +getCorrect() int
         +getIncorrect() int
     }
+    class Preguntas {
+        +String PREGUNTA_1$
+        +String PREGUNTA_2$
+        +String PREGUNTA_3$
+        +String PREGUNTA_4$
+        +String PREGUNTA_5$
+        +String PREGUNTA_6$
+        +String PREGUNTA_7$
+        +String PREGUNTA_8$
+        +String PREGUNTA_9$
+        +String PREGUNTA_10$
+        +String PREGUNTA_11$
+        +String PREGUNTA_12$
+        +String PREGUNTA_13$
+        +String PREGUNTA_14$
+        +String PREGUNTA_15$
+        +String PREGUNTA_16$
+        +String PREGUNTA_17$
+        +String PREGUNTA_18$
+        +String PREGUNTA_19$
+        +String PREGUNTA_20$
+        +String PREGUNTA_21$
+        +String PREGUNTA_22$
+        +String PREGUNTA_23$
+        +String PREGUNTA_24$
+        +String PREGUNTA_25$
+        +String PREGUNTA_26$
+        +String PREGUNTA_27$
+        +String PREGUNTA_28$
+        +String PREGUNTA_29$
+        +String PREGUNTA_30$
+        +String PREGUNTA_31$
+        +String PREGUNTA_32$
+        +String PREGUNTA_33$
+        +String PREGUNTA_34$
+        +String PREGUNTA_35$
+        +String PREGUNTA_36$
+        +String PREGUNTA_37$
+        +String PREGUNTA_38$
+        +String PREGUNTA_39$
+        +String PREGUNTA_40$
+        +Preguntas()
+    }
     class QuestionBank {
         -String[] CATEGORIES$
         -Question[][] QUESTIONS$
@@ -67,15 +110,13 @@ classDiagram
     Main ..> QuestionBank : crea
     Main ..> QuizEngine : ejecuta
     QuizEngine --> QuestionBank : consulta
+    QuizEngine ..> Question : presenta
+    QuizEngine ..> Answer : evalúa
     QuizEngine "1" *-- "0..*" GameRecord : historial
-    QuestionBank "1" --> "40" Question : banco estático
-    Question "1" *-- "3" Answer : opciones
-```
-
-## Ejecutor de pruebas
-
-```mermaid
-classDiagram
+    QuestionBank --> "40" Question : banco estático
+    QuestionBank ..> Preguntas : usa los enunciados
+    QuestionBank ..> Answer : crea opciones
+    Question --> "3" Answer : opciones
     class QuizTests {
         -int checks$
         -QuizTests()
@@ -95,4 +136,4 @@ classDiagram
     QuizTests ..> GameRecord : verifica resultados
 ```
 
-En el código de pruebas, types es Class<?>[] y arguments usa varargs Object..., representado aquí como Object[]. Los métodos de prueba que usan reflexión declaran throws Exception. Los atributos del juego son final. Los miembros estáticos se indican con el sufijo $ en el código Mermaid. Los modelos inmutables exponen getters y se inicializan mediante sus constructores.
+El diagrama incluye las siete clases del juego y el ejecutor de pruebas. Java genera el constructor público sin argumentos de `Preguntas`. En el código de pruebas, types es Class<?>[] y arguments usa varargs Object..., representado aquí como Object[]. Los métodos de prueba que usan reflexión declaran throws Exception. Los atributos de las clases del juego se declaran con `final`. Los miembros estáticos se indican con el sufijo $ en el código Mermaid. Los modelos inmutables exponen getters y se inicializan mediante sus constructores.

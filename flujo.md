@@ -8,7 +8,7 @@ flowchart TD
     D --> E[Seleccionar preguntas al azar sin repetir]
     E --> F[Mostrar la siguiente pregunta]
     F --> G[Leer respuesta]
-    G --> H{"¿A, B o C?"}
+    G --> H{"¿A, B o C, en mayúscula o minúscula?"}
     H -- No --> I[Mostrar error]
     I --> G
     H -- Sí --> J[Mostrar corrección y actualizar el recuento]
@@ -17,7 +17,7 @@ flowchart TD
     K -- No --> L[Calcular el resultado y guardar la partida en el ArrayList]
     L --> M[Mostrar mensaje y estadísticas de la partida]
     M --> N[Leer opción de volver a jugar]
-    N --> O{"¿S o N?"}
+    N --> O{"¿S o N, en mayúscula o minúscula?"}
     O -- Inválida --> P[Mostrar error]
     P --> N
     O -- S --> D

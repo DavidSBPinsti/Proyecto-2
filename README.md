@@ -1,50 +1,46 @@
 # Quiz Java comentado
 
-Juego de consola con dos categorías de veinte preguntas. Necesita JDK 17 o superior. Todos los archivos Java están dentro de src. Las clases del juego están en src y las pruebas en src/tests. Las líneas de código incluyen comentarios laterales explicativos.
+Juego de consola con 40 preguntas repartidas entre Informática y Cultura general. Cada partida selecciona al azar entre 5 y 20 preguntas de la categoría elegida, sin repetirlas. Las respuestas A, B y C se aceptan en mayúscula o minúscula. Al salir, el juego muestra el historial de la sesión.
 
-## Ejecutar desde la carpeta del proyecto
+## Ejecutar el juego
+
+Necesitas un JDK 17 o superior. Abre PowerShell en la carpeta que contiene este README y `src`.
 
 ```powershell
-javac -encoding UTF-8 -d out src/*.java
+$fuentes = (Get-ChildItem -Path src -Filter *.java).FullName
+javac --release 17 -encoding UTF-8 -d out $fuentes
 java -cp out Main
 ```
 
-En IntelliJ abre esta carpeta, selecciona un JDK 17 o superior y ejecuta Main.main.
+En IntelliJ IDEA, abre la carpeta contenedora `QuizJava_comentado`, selecciona un JDK 17 o superior y ejecuta `Main.main`.
 
 ## Ejecutar las pruebas
 
 ```powershell
-javac -encoding UTF-8 -d out src/*.java src/tests/QuizTests.java
+$fuentes = (Get-ChildItem -Path src -Recurse -Filter *.java).FullName
+javac --release 17 -encoding UTF-8 -d out $fuentes
 java -cp out QuizTests
 ```
 
-El resultado esperado es `OK: 304 comprobaciones superadas.`. Las pruebas lanzan AssertionError y terminan con error si algo falla. Son pruebas unitarias escritas en Java, junto con una prueba de integración de dos partidas. No requieren bibliotecas adicionales. Si el profesor exige específicamente JUnit, habrá que adaptar el ejecutor a ese framework.
+El resultado esperado es `OK: 304 comprobaciones superadas.`. El ejecutor incluye pruebas unitarias y una prueba de integración de dos partidas. Solo requiere el JDK.
 
-## Decisiones de implementación
+## Código y documentación
 
-- Preguntas en arrays estáticos de tamaño fijo. Historial en ArrayList.
-- Se solicitan entre 5 y 20 preguntas para evitar repeticiones.
-- El nombre se mantiene durante la sesión. Categoría y cantidad se eligen en cada partida.
-- Los cuatro tramos son 0 ≤ p < 34, 34 ≤ p < 67, 67 ≤ p < 100 y p = 100. Se evalúa el porcentaje sin redondear. La presentación tiene dos decimales.
-- Los mensajes se modifican en FEEDBACK, dentro de QuizEngine.
-- Los modelos son inmutables y proporcionan getters. Los arrays se devuelven mediante copias.
-- El historial se conserva durante la ejecución del programa.
-- Las ampliaciones de rachas y bonus son opcionales y esta entrega implementa el juego base.
+- `src/Preguntas.java` guarda los enunciados como constantes `PREGUNTA_1` a `PREGUNTA_40`. `src/QuestionBank.java` los combina con las opciones y las respuestas correctas en arrays estáticos.
+- `src/QuizEngine.java` gestiona las partidas y guarda el historial de la sesión en un `ArrayList`. Los cuatro mensajes de resultado se editan en `FEEDBACK`. El juego compara el porcentaje sin redondear con los cortes de 34, 67 y 100 y lo muestra con dos decimales.
+- [UML](uml.md) contiene las siete clases del juego y `QuizTests`. [Diagrama de flujo](flujo.md) describe una sesión completa. [Informe de pruebas](pruebas.md) recoge los casos y resultados.
 
-## Diagramas y pruebas
+## Historial Git y publicación
 
-flujo.md contiene el diagrama principal de ejecución. uml.md incluye las seis clases del juego y un diagrama adicional del ejecutor de pruebas. GitHub muestra los bloques Mermaid al abrir estos archivos. pruebas.md documenta las técnicas, los casos y los resultados de la ejecución.
+El ZIP incluye la carpeta oculta `.git` con el historial local. Desde la carpeta que contiene este README, puedes consultar los commits con `git log --oneline`.
 
-## Git y publicación pendiente
-
-La carpeta incluye el historial Git local de la versión inicial y las correcciones realizadas durante la revisión. La autoría técnica de estos commits es Codex, con correo local codex@localhost. Las fechas corresponden a la ejecución real.
-
-El repositorio de entrega es https://github.com/DavidSBPinsti/Proyecto-2. Para subir esta reorganización, desde la carpeta del proyecto ejecuta:
+Tras confirmar la URL de GitHub y disponer de permiso de escritura, configura el repositorio remoto y revisa su estado. Sustituye `URL_CONFIRMADA` por la URL del repositorio de destino.
 
 ```powershell
-git add src README.md uml.md
-git commit -m "Mover codigo Java a src"
-git push
+git remote add origin URL_CONFIRMADA
+git fetch origin
+git branch -r
+git log --oneline --graph --all
 ```
 
-Para abrir el proyecto en IntelliJ, abre la carpeta QuizJava y ejecuta Main desde src. Si IntelliJ no reconoce las clases automáticamente, marca src como Sources Root. Para ver los commits ejecuta `git log --oneline`.
+Si `origin` ya está configurado, comprueba la URL con `git remote -v` antes de continuar. Si el repositorio está vacío o su rama `main` es antecesora de la rama local, publica el historial con `git push -u origin main`. Si las ramas han divergido, revisa e integra el historial remoto antes de subir cambios. Con permisos limitados, solicita acceso o usa un fork y abre una pull request si el destino lo admite.

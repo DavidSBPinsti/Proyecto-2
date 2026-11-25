@@ -2,7 +2,7 @@
 
 ## Entorno y resultado
 
-Compilación con JDK 27 y destino Java 17 mediante `--release 17`. Ejecución de tests/QuizTests.java. Resultado obtenido tras las correcciones y los comentarios de código, **304 comprobaciones superadas**.
+Compilación con JDK 27 y destino Java 17 mediante `--release 17`. Ejecución de `src/tests/QuizTests.java` antes y después de renombrar las constantes de `Preguntas`. En ambas ejecuciones se obtuvieron **304 comprobaciones superadas**.
 
 El ejecutor contiene pruebas unitarias de los modelos, el banco, las validaciones y los mensajes, además de una prueba de integración de dos partidas. Usa AssertionError para señalar errores y se ejecuta con las instrucciones de README.md. La reflexión permite probar los métodos privados sin modificar su visibilidad en el juego.
 
