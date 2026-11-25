@@ -33,6 +33,16 @@ El resultado esperado es `OK: 304 comprobaciones superadas.`. El ejecutor incluy
 ## Historial Git y publicación
 
 El ZIP incluye la carpeta oculta `.git` con el historial local. Desde la carpeta que contiene este README, puedes consultar los commits con `git log --oneline`.
+Para asociar los commits nuevos con tu cuenta de GitHub, configura el nombre y un correo verificado o la dirección `noreply` de tu cuenta en este repositorio. La configuración local se guarda al ejecutar estos comandos desde esta carpeta.
+
+```powershell
+git config user.name "Tu nombre"
+git config user.email "correo verificado o dirección noreply de GitHub"
+git config user.name
+git config user.email
+```
+
+GitHub vincula los commits subidos cuando el correo del autor está asociado a tu cuenta. El cambio solo afecta a commits nuevos y no modifica los autores del historial existente.
 
 Tras confirmar la URL de GitHub y disponer de permiso de escritura, configura el repositorio remoto y revisa su estado. Sustituye `URL_CONFIRMADA` por la URL del repositorio de destino.
 
